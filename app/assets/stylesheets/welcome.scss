@@ -1,0 +1,69 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.home-page {
+  background-image: url(/assets/fashion-home.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 700px;
+}
+
+body.form-page {
+  background-image: url(/assets/fashion.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 700px;
+}
+
+.home, .forms {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.home {
+  margin: -150px 0 0 -275px;
+}
+
+.forms {
+  margin: -225px 0 0 -350px;
+  width: 45%;
+}
+
+.home form {
+  display: inline-flex;
+}
+
+.home a {
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  width: 73%;
+  margin-bottom: 5px;
+}
+
+.forms form {
+  display: inline-flex;
+  display: block;
+}
+
+.forms a {
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+  display: inline-block;
+  width: 30%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
