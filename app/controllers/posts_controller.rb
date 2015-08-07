@@ -14,12 +14,11 @@ class PostsController < ApplicationController
 
   def show
     @user = current_user
-    @post = Post.find(params[:id]) ## Finding the post id
+    @post = Post.find(params[:id]) # Finding the post id
     @comments = @post.comments
-    @comment = Comment.new ## Finding my comment id
+    @comment = Comment.new # Finding my comment id
     @is_favorite = Post.get_favorite(params[:id]) # calling class method get_favorite
     # @is_favorite = @post.favorite_posts.where(post_id: params[:post_id])
-    #where current user id matches user id on favorite posts
   end
 
   def new
