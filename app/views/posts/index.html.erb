@@ -1,5 +1,24 @@
 <% if params[:request_type] == 'all' || params[:search] %> <!-- If request is View All -->
 
+<header class="stream-header">
+
+  <div class="darkness"></div>
+  <div class="gradient"></div>
+
+  <div class="background-banner">
+      <img src="http://cdn10.lbstatic.nu/files/looks/medium/2014/10/26/4106593_camden.jpg?1414346578">
+      <img src="http://cdn9.lbstatic.nu/files/looks/medium/2014/10/26/4106732_nill-in865.jpg?1414350031">
+      <img src="http://cdn9.lbstatic.nu/files/looks/medium/2014/10/26/4106396_338_o_furry_knit.jpg?1414341867">
+      <img src="http://cdn11.lbstatic.nu/files/looks/medium/2014/10/26/4106602__MG_7451.jpg?1414346726">
+      <img src="http://cdn9.lbstatic.nu/files/looks/medium/2014/10/26/4106388_My_Photo-3.jpg?1414341609">
+  </div>
+
+  <div class="container-banner">
+    <div class="title">Looks on Where.it</div>
+  </div>
+
+</header>
+
   <% if @posts.present? %> <!-- If posts are present -->
 
     <% @posts.each do |post| %> <!-- Show each searched post -->

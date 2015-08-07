@@ -59,12 +59,6 @@ body {
   text-align: center;
  }
 
-.custom-layout {
-  font-size: .8em;
-  background: #DFDFDF;
-  padding: 50px;
-}
-
 .post {
   width: 25%;
   display: inline-table;
@@ -183,6 +177,14 @@ input.button-delete {
   color: #FFFFFF;
 }
 
+input#user_remember_me {
+  width: auto;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(239, 239, 239) inset;
+}
+
 textarea#post_description {
   margin: 5px 0 20px 0;
   padding: 9px;
@@ -197,6 +199,7 @@ textarea#post_description {
   padding: 50px;
   width: 70%;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .custom-layout input {
@@ -232,4 +235,66 @@ textarea#post_description {
 .icon-edit {
   width: 30px;
   margin-bottom: -7px;
+}
+
+
+.stream-header {
+  width: 95%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.stream-header .background-banner {
+  width: 150%;
+  height: 100%;
+  background: #777;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.stream-header .darkness {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: rgba(0,0,0,0.4);
+}
+
+.stream-header .gradient {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.5);
+  background-image: -webkit-linear-gradient(bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.35) 5%,rgba(0,0,0,0) 15%,rgba(0,0,0,0) 80%,rgba(0,0,0,0.2));
+  background-image: linear-gradient(to top,rgba(0,0,0,0.5),rgba(0,0,0,0.35) 5%,rgba(0,0,0,0) 15%,rgba(0,0,0,0) 80%,rgba(0,0,0,0.2));
+  background-color: transparent;
+}
+
+.container-banner {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.stream-header .title {
+    font-size: 36px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    margin-top: 130px;
+    text-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+.stream-header img {
+    height: 100%;
+    float: left;
 }
