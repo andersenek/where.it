@@ -20,7 +20,7 @@
     <p><span>Details:</span> <%= @post.description %></p>
   </div>
 
-  <h3>Comments <%= link_to image_tag("plus.png", class: "icon-photo"), new_post_comment_path(@post) %></h3>
+  <h3>Comments</h3>
 
   <% @comments.each do |comment| %>
     <div class = "comment">
