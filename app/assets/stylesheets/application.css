@@ -135,8 +135,9 @@ body {
 }
 
 .comment p {
-  line-height: 0;
   font-size: 13px;
+  line-height: 1em;
+  padding-bottom: 10px;
 }
 
 .comment h5 {
@@ -171,6 +172,38 @@ input[type=submit] {
   border: 0;
   font-size: 14px;
   color: #FFFFFF;
+}
+
+input.button-delete {
+  width: auto;
+  padding: 9px 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+textarea#post_description {
+  margin: 5px 0 20px 0;
+  padding: 9px;
+  border: solid 1px black;
+  width: 100%;
+  background: whitesmoke;
+}
+
+.custom-layout {
+  font-size: .8em;
+  background: #DFDFDF;
+  padding: 50px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.custom-layout input {
+  margin: 5px 0 20px 0;
+  padding: 9px;
+  border: solid 1px black;
+  width: 100%;
 }
 
 .read-more {

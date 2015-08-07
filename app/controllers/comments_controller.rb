@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
     redirect_to post_path(@post)
   end
 
-  def edit ### this is going to need the post id and the comment id, (the form should be pre filled in)
+  def edit # This is going to need the post id and the comment id, (the form should be pre filled in)
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     @user = current_user
@@ -34,16 +34,25 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @user = current_user
     @comment = Comment.find(params[:id])
-    @comment.update(comment_params)
 
-    redirect_to post_comment_path(@post, @comment)
+    if @comment.user_id == current_user.id # A comment can only be edited by user who created the comment
+      @comment.update(comment_params)
+      redirect_to post_comment_path(@post, @comment)
+    else
+      redirect_to post_comment_path(@post, @comment)
+    end
   end
 
   def destroy
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
-    @comment.destroy
-    redirect_to post_path(@post)
+
+    if @comment.user_id == current_user.id # A comment can only be deleted by user who created the comment
+      @comment.destroy
+      redirect_to post_path(@post)
+    else
+      redirect_to post_path(@post)
+    end
   end
 
   private

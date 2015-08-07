@@ -31771,3 +31771,2031 @@ Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8b
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:25:38 -0400
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-06 19:39:40 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 295ms (Views: 266.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:39:40 -0400
+
+
+Started GET "/assets/application.self-5ff02dfc547591efe0f4d85230343f47631ace524b8e9cc53410c5375607c3ab.css?body=1" for ::1 at 2015-08-06 19:39:40 -0400
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:39:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:39:40 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:39:40 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:39:40 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:39:40 -0400
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-06 19:39:45 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lweTD2q4pz7Uww+2Z4IjlUXKl+OzWOREKaW98itEzfDPixp2w10k8k6KZ9XPO6Ac7QN15x+n8SWMGzaZrTfu7Q==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "andersenek@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-08-06 22:33:24.560773"], ["current_sign_in_at", "2015-08-06 23:39:45.141275"], ["sign_in_count", 18], ["updated_at", "2015-08-06 23:39:45.142261"], ["id", 1]]
+  [1m[36m (133.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 223ms (ActiveRecord: 135.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:39:45 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:39:46 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (1.2ms)[0m  SELECT "posts".* FROM "posts"  ORDER BY created_at DESC
+  Rendered posts/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 72ms (Views: 38.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:39:48 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mFavoritePost Load (0.5ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[35mComment Load (0.5ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (3.3ms)
+  Rendered posts/show.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 98ms (Views: 77.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/pencil-50dceb0631c2b233ef7ff7c551305f4f0ea35b3b0f9947f727e809a42891b32d.png" for ::1 at 2015-08-06 19:39:48 -0400
+
+
+Started GET "/assets/plus-090eb18b71346b382cf431a0c91f2db9e885d78da2ee5aae19f84a63ebba9ab8.png" for ::1 at 2015-08-06 19:39:48 -0400
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:40:43 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mFavoritePost Load (0.2ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (2.4ms)
+  Rendered posts/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 66ms (Views: 60.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:40:43 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:40:43 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:40:43 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:40:43 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:40:43 -0400
+
+
+Started GET "/assets/application.self-1a0336b130c3c2550677ffda14a8bcce4d421b51dce60014dc185cc617aa9d79.css?body=1" for ::1 at 2015-08-06 19:40:43 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:40:43 -0400
+
+
+Started GET "/assets/pencil-50dceb0631c2b233ef7ff7c551305f4f0ea35b3b0f9947f727e809a42891b32d.png" for ::1 at 2015-08-06 19:40:43 -0400
+
+
+Started GET "/assets/plus-090eb18b71346b382cf431a0c91f2db9e885d78da2ee5aae19f84a63ebba9ab8.png" for ::1 at 2015-08-06 19:40:43 -0400
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:41:29 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 51ms (Views: 46.3ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-08-06 19:41:37 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"T1X6fTL+SRkLB4LzJ1tKdw4A6tIZhSm6NniGDo5lMTQ8MsvX/OgAK74a8XctbQaHUak0K3nZcNXOdeATzAgD7Q=="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:41:37 -0400
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-06 19:41:37 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:41:37 -0400
+
+
+Started GET "/assets/application.self-1a0336b130c3c2550677ffda14a8bcce4d421b51dce60014dc185cc617aa9d79.css?body=1" for ::1 at 2015-08-06 19:41:37 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:41:37 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:41:37 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:41:37 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:41:37 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:41:37 -0400
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-06 19:41:39 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bBWhPkp0Wz98sZTUMRxptefGihxlW2Th5SA8KBPzXhNY0mnK4z1ObF9KmhEsYXlHzviTtTYrUl8IP2A9fkfADA==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "andersenek@gmail.com"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2015-08-06 23:39:45.141275"], ["current_sign_in_at", "2015-08-06 23:41:39.223395"], ["sign_in_count", 19], ["updated_at", "2015-08-06 23:41:39.224549"], ["id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 77ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:41:39 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:41:39 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:41:39 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:41:39 -0400
+
+
+Started GET "/assets/application.self-1a0336b130c3c2550677ffda14a8bcce4d421b51dce60014dc185cc617aa9d79.css?body=1" for ::1 at 2015-08-06 19:41:39 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:41:39 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:41:39 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:41:39 -0400
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:41:40 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:41:41 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.4ms)
+  Rendered posts/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/pencil-50dceb0631c2b233ef7ff7c551305f4f0ea35b3b0f9947f727e809a42891b32d.png" for ::1 at 2015-08-06 19:41:41 -0400
+
+
+Started GET "/assets/plus-090eb18b71346b382cf431a0c91f2db9e885d78da2ee5aae19f84a63ebba9ab8.png" for ::1 at 2015-08-06 19:41:41 -0400
+
+
+Started POST "/posts/6/comments" for ::1 at 2015-08-06 19:42:06 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bDsv+BMimF/hF6p/FZvFVO5gQLNTTj9t5xAoMNdflVHgUFhB3xb2KXZocZoOP/4eMu2jTZXuuCRyJTc5wRb9sw==", "comment"=>{"subject"=>"Erica is leaving a cool comment", "comment"=>"Coooool.", "user_email"=>"andersenek@gmail.com"}, "commit"=>"Submit", "post_id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "comments" ("subject", "comment", "user_email", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["subject", "Erica is leaving a cool comment"], ["comment", "Coooool."], ["user_email", "andersenek@gmail.com"], ["post_id", 6], ["created_at", "2015-08-06 23:42:06.456496"], ["updated_at", "2015-08-06 23:42:06.456496"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "comments" SET "user_id" = $1, "updated_at" = $2 WHERE "comments"."id" = $3  [["user_id", 1], ["updated_at", "2015-08-06 23:42:06.462302"], ["id", 7]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 12ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:42:06 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:42:06 -0400
+
+
+Started GET "/assets/application.self-1a0336b130c3c2550677ffda14a8bcce4d421b51dce60014dc185cc617aa9d79.css?body=1" for ::1 at 2015-08-06 19:42:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:42:06 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:42:06 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:42:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:42:06 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:42:06 -0400
+
+
+Started GET "/assets/plus-090eb18b71346b382cf431a0c91f2db9e885d78da2ee5aae19f84a63ebba9ab8.png" for ::1 at 2015-08-06 19:42:06 -0400
+
+
+Started GET "/assets/pencil-50dceb0631c2b233ef7ff7c551305f4f0ea35b3b0f9947f727e809a42891b32d.png" for ::1 at 2015-08-06 19:42:06 -0400
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-08-06 19:42:15 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered posts/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 44ms (Views: 41.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/5" for ::1 at 2015-08-06 19:42:17 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mFavoritePost Load (0.3ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 5]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  Rendered comments/_form.html.erb (1.3ms)
+  Rendered posts/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 39ms (Views: 34.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-08-06 19:42:25 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:42:27 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-08-06 19:42:31 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:42:32 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:43:31 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:43:31 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:43:31 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:43:31 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:43:31 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:43:31 -0400
+
+
+Started GET "/assets/application.self-1a0336b130c3c2550677ffda14a8bcce4d421b51dce60014dc185cc617aa9d79.css?body=1" for ::1 at 2015-08-06 19:43:31 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:43:31 -0400
+
+
+Started GET "/assets/pencil-50dceb0631c2b233ef7ff7c551305f4f0ea35b3b0f9947f727e809a42891b32d.png" for ::1 at 2015-08-06 19:43:31 -0400
+
+
+Started GET "/assets/plus-090eb18b71346b382cf431a0c91f2db9e885d78da2ee5aae19f84a63ebba9ab8.png" for ::1 at 2015-08-06 19:43:31 -0400
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:46:59 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.3ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.4ms)
+  Rendered posts/show.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 149ms (Views: 144.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:46:59 -0400
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:46:59 -0400
+
+
+Started GET "/assets/application.self-1a0336b130c3c2550677ffda14a8bcce4d421b51dce60014dc185cc617aa9d79.css?body=1" for ::1 at 2015-08-06 19:46:59 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:46:59 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:46:59 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:46:59 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:46:59 -0400
+
+
+Started GET "/assets/pencil-50dceb0631c2b233ef7ff7c551305f4f0ea35b3b0f9947f727e809a42891b32d.png" for ::1 at 2015-08-06 19:46:59 -0400
+
+
+Started GET "/assets/plus-090eb18b71346b382cf431a0c91f2db9e885d78da2ee5aae19f84a63ebba9ab8.png" for ::1 at 2015-08-06 19:46:59 -0400
+
+
+Started GET "/assets/unfavorite-0186b49526d8a6c824af7477f38049f2d0ac058639cb4c5fd191a8131bca97c2.png" for ::1 at 2015-08-06 19:46:59 -0400
+
+
+Started PUT "/posts/6/favorite?type=unfavorite" for ::1 at 2015-08-06 19:47:03 -0400
+Processing by PostsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"McFb4YtbCIUQlHfiaEHd1JpQwosy85gL0Z9BQWPBK5O9qixYR29m84frrAdz5eaeRt0hdfRTH0JEql5IdYhDcQ==", "type"=>"unfavorite", "id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "favorite_posts" WHERE "favorite_posts"."user_id" = $1 AND "favorite_posts"."post_id" = 6[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:47:03 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mFavoritePost Load (0.1ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/favorite-76ac2b60781274d785ef57945615a650f769a27e38bad661c9317ea9d94a0f27.png" for ::1 at 2015-08-06 19:47:03 -0400
+
+
+Started PUT "/posts/6/favorite?type=favorite" for ::1 at 2015-08-06 19:47:04 -0400
+Processing by PostsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"g5Pr5Wg+9p2g5zzXGVFpsnY5dv6g82G39CR9gJklP90P+JxcpAqY6zeY5zIC9VL4qrSVAGZT5v5hEWKJj2xXPw==", "type"=>"favorite", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "favorite_posts" ("user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["post_id", 6], ["created_at", "2015-08-06 23:47:04.646039"], ["updated_at", "2015-08-06 23:47:04.646039"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 9ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:47:04 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.1ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:48:21 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 32.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:48:59 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:48:59 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:48:59 -0400
+
+
+Started GET "/assets/application.self-2b8f2f026254fdda5df27ff1c88c09295d5eedd3d9a071f2e69d9dd8aaf021f9.css?body=1" for ::1 at 2015-08-06 19:48:59 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:48:59 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:48:59 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:48:59 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:48:59 -0400
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:50:14 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (17.4ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined local variable or method `button' for #<#<Class:0x007f89baa8d478>:0x007f89bbcefee0>):
+    1: <div class="custom-layout">
+    2: <h2>Comment:</h2>
+    3: 
+    4: <h3>"<%= @comment.subject %>" <%= link_to "(edit)", edit_post_comment_path, class: button-link %></h3>
+    5: 
+    6: <h4>By: <%= @show_user %></h4>
+    7: 
+  app/views/comments/show.html.erb:4:in `_app_views_comments_show_html_erb__110540868845503558_70114769073680'
+
+
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.2ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (56.2ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (118.3ms)
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:51:06 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:51:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:51:06 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:51:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:51:06 -0400
+
+
+Started GET "/assets/application.self-2b8f2f026254fdda5df27ff1c88c09295d5eedd3d9a071f2e69d9dd8aaf021f9.css?body=1" for ::1 at 2015-08-06 19:51:06 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:51:06 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:51:06 -0400
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:51:47 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:51:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:51:47 -0400
+
+
+Started GET "/assets/application.self-2b8f2f026254fdda5df27ff1c88c09295d5eedd3d9a071f2e69d9dd8aaf021f9.css?body=1" for ::1 at 2015-08-06 19:51:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:51:47 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:51:47 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:51:47 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:51:47 -0400
+
+
+Started GET "/assets/pencil-50dceb0631c2b233ef7ff7c551305f4f0ea35b3b0f9947f727e809a42891b32d.png" for ::1 at 2015-08-06 19:51:47 -0400
+
+
+Started GET "/posts/6/comments/6/edit" for ::1 at 2015-08-06 19:51:50 -0400
+Processing by CommentsController#edit as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered comments/_form.html.erb (1.6ms)
+  Rendered comments/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/posts/6/comments/6" for ::1 at 2015-08-06 19:51:54 -0400
+Processing by CommentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0p+eR4PRSyanmaOK1umugQl8uGKY7AxEQFJ4xEkXV1he9On+T+UlUDDmeG/NTZXL1fFbnF5Miw3VZ2fNX14/ug==", "comment"=>{"subject"=>"This leather jacket is awesome edit", "comment"=>"I can't believe it!", "user_email"=>"andersenek@gmail.com"}, "commit"=>"Submit", "post_id"=>"6", "id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "comments" SET "subject" = $1, "user_email" = $2, "updated_at" = $3 WHERE "comments"."id" = $4  [["subject", "This leather jacket is awesome edit"], ["user_email", "andersenek@gmail.com"], ["updated_at", "2015-08-06 23:51:54.988386"], ["id", 6]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/6/comments/6
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:51:54 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:51:55 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:51:55 -0400
+
+
+Started GET "/assets/application.self-2b8f2f026254fdda5df27ff1c88c09295d5eedd3d9a071f2e69d9dd8aaf021f9.css?body=1" for ::1 at 2015-08-06 19:51:55 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:51:55 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:51:55 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:51:55 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:51:55 -0400
+
+
+Started GET "/assets/pencil-50dceb0631c2b233ef7ff7c551305f4f0ea35b3b0f9947f727e809a42891b32d.png" for ::1 at 2015-08-06 19:51:55 -0400
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-08-06 19:52:00 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EAvgriqgvgHAn7ja6DB/Y1Kty7QQbd8UfkZskfQEsT6cYJcX5pTQd1fgYz/zlEQpjiAoStbNWF3rc3OY4k3Z3A=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:52:00 -0400
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-06 19:52:00 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:52:00 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:52:00 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:52:00 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:52:00 -0400
+
+
+Started GET "/assets/application.self-2b8f2f026254fdda5df27ff1c88c09295d5eedd3d9a071f2e69d9dd8aaf021f9.css?body=1" for ::1 at 2015-08-06 19:52:00 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:52:00 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:52:00 -0400
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-06 19:52:11 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4QDe1oKe9YhS3Xcfo2ZqnEHuhUPZOm9qCnDef5QoY9yNwS3PY4t2QfdvCgmc6TRC3xPw02bmI7zx+kEmWe1Mxg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "test@test.com"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-08-06 20:49:05.380682"], ["current_sign_in_at", "2015-08-06 23:52:11.468363"], ["sign_in_count", 3], ["updated_at", "2015-08-06 23:52:11.469192"], ["id", 2]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:52:11 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:52:13 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"  ORDER BY created_at DESC
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:52:16 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mFavoritePost Load (0.2ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.3ms)
+  Rendered posts/show.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:54:29 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mFavoritePost Load (0.2ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (2.1ms)
+  Rendered posts/show.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 104ms (Views: 54.2ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:54:29 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:54:29 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:54:29 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:54:29 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:54:29 -0400
+
+
+Started GET "/assets/application.self-2b8f2f026254fdda5df27ff1c88c09295d5eedd3d9a071f2e69d9dd8aaf021f9.css?body=1" for ::1 at 2015-08-06 19:54:29 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:54:29 -0400
+
+
+Started GET "/assets/pencil-50dceb0631c2b233ef7ff7c551305f4f0ea35b3b0f9947f727e809a42891b32d.png" for ::1 at 2015-08-06 19:54:29 -0400
+
+
+Started GET "/assets/unfavorite-0186b49526d8a6c824af7477f38049f2d0ac058639cb4c5fd191a8131bca97c2.png" for ::1 at 2015-08-06 19:54:29 -0400
+
+
+Started GET "/assets/plus-090eb18b71346b382cf431a0c91f2db9e885d78da2ee5aae19f84a63ebba9ab8.png" for ::1 at 2015-08-06 19:54:29 -0400
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:54:32 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 46ms (Views: 42.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/6/comments/6/edit" for ::1 at 2015-08-06 19:54:34 -0400
+Processing by CommentsController#edit as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered comments/_form.html.erb (1.5ms)
+  Rendered comments/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/posts/6/comments/6" for ::1 at 2015-08-06 19:54:38 -0400
+Processing by CommentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o8sv4xnrV37P3R4nFk8BuVunsje4LGp6umeccnYBc+oqBn7I1crsO9pxuTnZ3wOaGvcBvbVJ8L9vumNzUCXvrw==", "comment"=>{"subject"=>"This leather jacket is awesome", "comment"=>"I can't believe it!", "user_email"=>"test@test.com"}, "commit"=>"Submit", "post_id"=>"6", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "comments" SET "subject" = $1, "user_email" = $2, "updated_at" = $3 WHERE "comments"."id" = $4[0m  [["subject", "This leather jacket is awesome"], ["user_email", "test@test.com"], ["updated_at", "2015-08-06 23:54:38.988887"], ["id", 6]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/6/comments/6
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:54:38 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-08-06 19:54:40 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qBHtnEXe8zmDNFInNJ/ANzWueSewBFUlQs95SYQ6/hsh3Ly3if9IfJaY9Tn7D8IUdP7Krb1hz+CXEoZIoh5iXg=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:54:40 -0400
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-06 19:54:40 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-06 19:54:47 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mqLwxWfJpgkQgaWlMY06bglSKLi+8a+AlB6oKz1mSY/vQV/j01BGQq+UptOAB4KXPJKSVKJnm4bWp2yGg76fvQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "test@test.com"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2015-08-06 23:52:11.468363"], ["current_sign_in_at", "2015-08-06 23:54:47.758505"], ["sign_in_count", 4], ["updated_at", "2015-08-06 23:54:47.759318"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 74ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:54:47 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:54:48 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 36ms (Views: 31.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:54:49 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.3ms)
+  Rendered posts/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 48ms (Views: 44.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:54:53 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 36ms (Views: 34.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:54:57 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/6/comments/6/edit" for ::1 at 2015-08-06 19:54:58 -0400
+Processing by CommentsController#edit as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered comments/_form.html.erb (1.3ms)
+  Rendered comments/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/6/comments/6" for ::1 at 2015-08-06 19:55:00 -0400
+Processing by CommentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hZ4vp0PDh49BqZoXlGVAFE/zlCU/+AJGx248aZ3AX8CdZAzs96COTBHcp2E9lDZyGT3uPxMbMGFF5byTq0uBpQ==", "comment"=>{"subject"=>"This leather jacket is awesome edit", "comment"=>"I can't believe it!", "user_email"=>"test@test.com"}, "commit"=>"Submit", "post_id"=>"6", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.8ms)[0m  [1mUPDATE "comments" SET "subject" = $1, "updated_at" = $2 WHERE "comments"."id" = $3[0m  [["subject", "This leather jacket is awesome edit"], ["updated_at", "2015-08-06 23:55:00.653473"], ["id", 6]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/6/comments/6
+Completed 302 Found in 7ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:55:00 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:55:03 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:55:04 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 41ms (Views: 36.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/6/comments/7" for ::1 at 2015-08-06 19:55:05 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"7"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/6/comments/7/edit" for ::1 at 2015-08-06 19:55:06 -0400
+Processing by CommentsController#edit as HTML
+  Parameters: {"post_id"=>"6", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  Rendered comments/_form.html.erb (1.3ms)
+  Rendered comments/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/6/comments/7" for ::1 at 2015-08-06 19:55:09 -0400
+Processing by CommentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VjT4P/QkmujXArSdz2K9ulVxacRMaUezuF2ch/JlfIZOztt0QEeTK4d3ietmk8vcA78T3mCKdZQ61hx9xO6i4w==", "comment"=>{"subject"=>"Erica is leaving a cool comment edit", "comment"=>"Coooool.", "user_email"=>"test@test.com"}, "commit"=>"Submit", "post_id"=>"6", "id"=>"7"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 7]]
+Redirected to http://localhost:3000/posts/6/comments/7
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/6/comments/7" for ::1 at 2015-08-06 19:55:09 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-08-06 19:55:39 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0f7zLzP0wP0icGZ1n61Jpe0UokneIafU/2oxQjgTtnjJBNBkh5fJPnIFWwM2XD/Du9rYU/LClfN94bG4DphoHQ=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:55:39 -0400
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-06 19:55:39 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-06 19:55:41 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dZ+aURZJnCAOwUQ0Ch53pfz6GlPKcK8ok21oAI/ZnLx/lMAdtdd3zaY0SuqKXUf56pwVI3Ov8pKBkC38Van7nA==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "andersenek@gmail.com"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2015-08-06 23:41:39.223395"], ["current_sign_in_at", "2015-08-06 23:55:41.740120"], ["sign_in_count", 20], ["updated_at", "2015-08-06 23:55:41.740944"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 79ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:55:41 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:55:42 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:55:44 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.5ms)
+  Rendered posts/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 46ms (Views: 40.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:55:45 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/6/comments/6/edit" for ::1 at 2015-08-06 19:55:46 -0400
+Processing by CommentsController#edit as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered comments/_form.html.erb (1.3ms)
+  Rendered comments/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/6/comments/6" for ::1 at 2015-08-06 19:55:51 -0400
+Processing by CommentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dxqCeQmKQuOEvxkMAhu2m91y3LhmnO6bVwNiSsujOzmfN09UsroG3g5zUW6NjKx06gAebK0u8nuWmbcKxqQ4Kg==", "comment"=>{"subject"=>"This leather jacket is awesome", "comment"=>"I can't believe it!", "user_email"=>"andersenek@gmail.com"}, "commit"=>"Submit", "post_id"=>"6", "id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+Redirected to http://localhost:3000/posts/6/comments/6
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/6/comments/6" for ::1 at 2015-08-06 19:55:51 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/posts/6/comments/6" for ::1 at 2015-08-06 19:55:57 -0400
+Processing by CommentsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2LF6vRUpYMdl82GNU8yH25Goxdn4cqrK8TCqdYKRP74wnLeQrhkk+u8/Ke/cW500ptoHDTPAtiowqn81j5Y8rQ==", "commit"=>"Delete Comment!", "post_id"=>"6", "id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "comments" WHERE "comments"."id" = $1  [["id", 6]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 5ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:55:57 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.1ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.5ms)
+  Rendered posts/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 41ms (Views: 37.8ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-08-06 19:56:02 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FHnSEwZuN59EVR0idXP0i1lfxHZPxoTkDHjTUljR1CP8VB8+vV5zos6ZVUD65O5kbi0GooR0mATN4gYSVdbXMA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:56:02 -0400
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-06 19:56:02 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-06 19:56:09 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ALyLCHzF7BhTf8XmRISKdA6vObFODtQq4orlfAzKt0qVBtLsxZT5CPHCX+ep4fHOCI3Q67eSCrZmLZx0aBtcew==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "test@test.com"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2015-08-06 23:54:47.758505"], ["current_sign_in_at", "2015-08-06 23:56:09.274844"], ["sign_in_count", 5], ["updated_at", "2015-08-06 23:56:09.275933"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 78ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:56:09 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:56:10 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 41ms (Views: 38.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:56:11 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.3ms)
+  Rendered posts/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/posts/6/comments" for ::1 at 2015-08-06 19:56:23 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jMXEUu/wb0yPCZcQImO3Lmi70upDB1nnChirtnOGf7oirreZ3Tqi5sWxDQC3cOKauaKmSsYnUf+UY2cB2xhmlA==", "comment"=>{"subject"=>"Test Comment", "comment"=>"This leather jacket is the bomb.com", "user_email"=>"test@test.com"}, "commit"=>"Submit", "post_id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "comments" ("subject", "comment", "user_email", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["subject", "Test Comment"], ["comment", "This leather jacket is the bomb.com"], ["user_email", "test@test.com"], ["post_id", 6], ["created_at", "2015-08-06 23:56:23.101483"], ["updated_at", "2015-08-06 23:56:23.101483"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "comments" SET "user_id" = $1, "updated_at" = $2 WHERE "comments"."id" = $3  [["user_id", 2], ["updated_at", "2015-08-06 23:56:23.104877"], ["id", 8]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:56:23 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.1ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:57:41 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.8ms)
+  Rendered posts/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 86ms (Views: 44.5ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 19:57:41 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 19:57:41 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 19:57:41 -0400
+
+
+Started GET "/assets/application.self-2b8f2f026254fdda5df27ff1c88c09295d5eedd3d9a071f2e69d9dd8aaf021f9.css?body=1" for ::1 at 2015-08-06 19:57:41 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 19:57:41 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 19:57:41 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 19:57:41 -0400
+
+
+Started GET "/assets/pencil-50dceb0631c2b233ef7ff7c551305f4f0ea35b3b0f9947f727e809a42891b32d.png" for ::1 at 2015-08-06 19:57:41 -0400
+
+
+Started GET "/assets/unfavorite-0186b49526d8a6c824af7477f38049f2d0ac058639cb4c5fd191a8131bca97c2.png" for ::1 at 2015-08-06 19:57:41 -0400
+
+
+Started GET "/assets/plus-090eb18b71346b382cf431a0c91f2db9e885d78da2ee5aae19f84a63ebba9ab8.png" for ::1 at 2015-08-06 19:57:41 -0400
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-08-06 19:57:45 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VEY4hotYSDYZFn+5DHjB8q20uNZA5l5+RnQ7WrgsDhD6LUtNuZKFnFOu5amZa5RGfK3MdsXGVmbYD/ftELIXPg=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:57:45 -0400
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-06 19:57:45 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-06 19:57:46 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XtdxvfpvxDdEZRTysUx+fumIQWnE+agLDAQtCSWi9giDZK5kONAdYLEDjnz2NSsus8QqlQMGQpMfhmhi9ctzyg==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "andersenek@gmail.com"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2015-08-06 23:55:41.740120"], ["current_sign_in_at", "2015-08-06 23:57:47.039111"], ["sign_in_count", 21], ["updated_at", "2015-08-06 23:57:47.039894"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 77ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:57:47 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:57:48 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 29.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:57:48 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 44ms (Views: 40.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/6/comments/8" for ::1 at 2015-08-06 19:57:49 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"8"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/posts/6/comments/8" for ::1 at 2015-08-06 19:57:52 -0400
+Processing by CommentsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sPv80J1K52u0FP2Z1aOeJ1Rdvh0cObi7dZZkajQGUfyA8hXEUh8QV6Hr21LUg56DpgQpkSnEcVGQMWxNaaFk/w==", "commit"=>"Delete Comment!", "post_id"=>"6", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 8]]
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:57:52 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 48ms (Views: 44.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:57:57 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/5" for ::1 at 2015-08-06 19:57:58 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mFavoritePost Load (0.1ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 5]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/5/comments/4" for ::1 at 2015-08-06 19:58:00 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"5", "id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered comments/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 38ms (Views: 35.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/posts/5/comments/4" for ::1 at 2015-08-06 19:58:01 -0400
+Processing by CommentsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QLHvaoou6u+nbFutpIMuHKimzJE7FsgVJMsxEfaDjLRwuAZ+RXsd07KTfWaloy64Wv9bHQ7rAf/BbDk2qyS5tw==", "commit"=>"Delete Comment!", "post_id"=>"5", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 6ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/5" for ::1 at 2015-08-06 19:58:02 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mFavoritePost Load (0.1ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 5]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 37ms (Views: 33.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-08-06 19:58:21 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1  [["user_id", 1]]
+  Rendered posts/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 68ms (Views: 43.4ms | ActiveRecord: 5.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-08-06 19:58:29 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"W5yG7JlPmc0uuJ1LCXFWSFEEcM+StfA3y8RUsm42ruhrlW/4Vhpu8TtHu4AIUVbso13nQ6dIOd0uY1yVM5Gb6w=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:58:29 -0400
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-08-06 19:58:29 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-08-06 19:58:36 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2fsPdwaxqvuht2Hm/Q4b02COKx7xqER/+py+n7OGZLYGhO9tg/WqjMnURn6rEAJ26HdVCRnOYCrAdbmMnCpgkg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "test@test.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-08-06 23:56:09.274844"], ["current_sign_in_at", "2015-08-06 23:58:36.358607"], ["sign_in_count", 6], ["updated_at", "2015-08-06 23:58:36.359510"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 77ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:58:36 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:58:37 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"  ORDER BY created_at DESC
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:58:40 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mFavoritePost Load (0.3ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.9ms)
+  Rendered posts/show.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 58ms (Views: 40.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-08-06 19:58:43 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1  [["user_id", 2]]
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:58:44 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-08-06 19:58:59 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered posts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:59:00 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/3" for ::1 at 2015-08-06 19:59:06 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mFavoritePost Load (0.1ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 3]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 41ms (Views: 37.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-08-06 19:59:14 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:59:15 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/5" for ::1 at 2015-08-06 19:59:16 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mFavoritePost Load (0.1ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 5]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 50ms (Views: 46.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:59:18 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:59:18 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.1ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.7ms)
+  Rendered posts/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 19:59:23 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 19:59:31 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"  ORDER BY created_at DESC
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 19:59:32 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mFavoritePost Load (0.1ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/6/edit" for ::1 at 2015-08-06 19:59:35 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered posts/_form.html.erb (3.4ms)
+  Rendered posts/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/6/edit" for ::1 at 2015-08-06 20:00:38 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered posts/_form.html.erb (3.1ms)
+  Rendered posts/edit.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 20:00:38 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 20:00:38 -0400
+
+
+Started GET "/assets/application.self-2b8f2f026254fdda5df27ff1c88c09295d5eedd3d9a071f2e69d9dd8aaf021f9.css?body=1" for ::1 at 2015-08-06 20:00:38 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 20:00:38 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 20:00:38 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 20:00:38 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 20:00:38 -0400
+
+
+Started GET "/posts/6/edit" for ::1 at 2015-08-06 20:04:06 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered posts/_form.html.erb (2.3ms)
+  Rendered posts/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 52ms (Views: 49.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-bbbfcd096c43273d6668f9d2e188cdd91fb76df6ad5b61170dfa3616d6069c0f.css?body=1" for ::1 at 2015-08-06 20:04:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 20:04:06 -0400
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 20:04:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 20:04:06 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 20:04:06 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 20:04:06 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 20:04:06 -0400
+
+
+Started GET "/posts/6/edit" for ::1 at 2015-08-06 20:05:12 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered posts/_form.html.erb (2.2ms)
+  Rendered posts/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 20:05:12 -0400
+
+
+Started GET "/assets/application.self-bbbfcd096c43273d6668f9d2e188cdd91fb76df6ad5b61170dfa3616d6069c0f.css?body=1" for ::1 at 2015-08-06 20:05:12 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 20:05:12 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 20:05:12 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 20:05:12 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 20:05:12 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 20:05:12 -0400
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 20:06:02 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts"  ORDER BY created_at DESC
+  Rendered posts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 57ms (Views: 53.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 20:06:04 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mFavoritePost Load (0.2ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 6]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.3ms)
+  Rendered posts/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 43ms (Views: 39.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/6/comments/7" for ::1 at 2015-08-06 20:06:07 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"post_id"=>"6", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered comments/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 20:06:30 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-08-06 20:06:31 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.1ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/6/edit" for ::1 at 2015-08-06 20:06:32 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered posts/_form.html.erb (2.6ms)
+  Rendered posts/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/6/edit" for ::1 at 2015-08-06 20:07:16 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered posts/_form.html.erb (6.9ms)
+  Rendered posts/edit.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 20:07:16 -0400
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 20:07:16 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 20:07:16 -0400
+
+
+Started GET "/assets/application.self-bbbfcd096c43273d6668f9d2e188cdd91fb76df6ad5b61170dfa3616d6069c0f.css?body=1" for ::1 at 2015-08-06 20:07:16 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 20:07:16 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 20:07:16 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 20:07:16 -0400
+
+
+Started GET "/posts/6/edit" for ::1 at 2015-08-06 20:08:00 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered posts/_form.html.erb (1.6ms)
+  Rendered posts/edit.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms)
+
+SyntaxError (/Users/ericaandersen/wdi/lessons/where.it/app/views/posts/_form.html.erb:19: syntax error, unexpected ':', expecting ')'
+...xt_area :hatch, size: "30x10" :description );@output_buffer....
+...                               ^):
+  app/views/posts/_form.html.erb:19: syntax error, unexpected ':', expecting ')'
+  app/views/posts/edit.html.erb:4:in `_app_views_posts_edit_html_erb__564474214188369800_70114767130240'
+
+
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.5ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.2ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (53.8ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (122.7ms)
+
+
+Started GET "/posts/6/edit" for ::1 at 2015-08-06 20:08:52 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered posts/_form.html.erb (3.0ms)
+  Rendered posts/edit.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 36ms (Views: 34.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-bbbfcd096c43273d6668f9d2e188cdd91fb76df6ad5b61170dfa3616d6069c0f.css?body=1" for ::1 at 2015-08-06 20:08:53 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 20:08:53 -0400
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 20:08:53 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 20:08:53 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 20:08:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 20:08:53 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 20:08:53 -0400
+
+
+Started GET "/posts/6/edit" for ::1 at 2015-08-06 20:09:03 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered posts/_form.html.erb (3.1ms)
+  Rendered posts/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-bbbfcd096c43273d6668f9d2e188cdd91fb76df6ad5b61170dfa3616d6069c0f.css?body=1" for ::1 at 2015-08-06 20:09:03 -0400
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 20:09:03 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 20:09:03 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 20:09:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 20:09:03 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 20:09:03 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 20:09:03 -0400
+
+
+Started GET "/posts/6/edit" for ::1 at 2015-08-06 20:09:09 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered posts/_form.html.erb (2.8ms)
+  Rendered posts/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-bbbfcd096c43273d6668f9d2e188cdd91fb76df6ad5b61170dfa3616d6069c0f.css?body=1" for ::1 at 2015-08-06 20:09:09 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 20:09:09 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 20:09:09 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 20:09:09 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 20:09:09 -0400
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 20:09:09 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 20:09:09 -0400
+
+
+Started GET "/posts/6/edit" for ::1 at 2015-08-06 20:09:54 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered posts/_form.html.erb (3.0ms)
+  Rendered posts/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 57ms (Views: 55.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 20:09:54 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 20:09:54 -0400
+
+
+Started GET "/assets/application.self-bd13c85840cc0aa608226ef0ce2e7e9962ae9c53fe6708cb5576c8ada2d56306.css?body=1" for ::1 at 2015-08-06 20:09:54 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 20:09:54 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 20:09:54 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 20:09:54 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 20:09:54 -0400
+
+
+Started GET "/posts/6/edit" for ::1 at 2015-08-06 20:10:22 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered posts/_form.html.erb (2.2ms)
+  Rendered posts/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 48ms (Views: 45.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/welcome.self-9b66241aaf287c96fa28fd76c29898ff44c99083664e5aea5323a9ae35ba4cbe.css?body=1" for ::1 at 2015-08-06 20:10:22 -0400
+
+
+Started GET "/assets/application.self-dcb4a23e32a0fad1da32d19aa79d73ee8d9f8f20041482b0149fa5440045fb02.css?body=1" for ::1 at 2015-08-06 20:10:22 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-06 20:10:22 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-06 20:10:22 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-06 20:10:22 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-06 20:10:22 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-06 20:10:22 -0400
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-08-06 20:10:30 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-08-06 20:10:31 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-08-06 20:10:35 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.2ms)

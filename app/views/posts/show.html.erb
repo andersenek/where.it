@@ -6,13 +6,13 @@
 
   <h3><%= @post.title %> <%= link_to image_tag("pencil.png", class: "icon-edit"), edit_post_path %>
   <% if @is_favorite %>
-    <%= link_to "Unfavorite", favorite_post_path(@post, type: "unfavorite"), method: :put, class: "button-link" %>
+    <%= link_to image_tag("unfavorite.png", class: "icon-edit"), favorite_post_path(@post, type: "unfavorite"), method: :put %>
   <% else %>
     <%= link_to image_tag("favorite.png", class: "icon-edit"), favorite_post_path(@post, type: "favorite"), method: :put %>
   <% end %>
   </h3>
 
-  <p><%= link_to "Buy Now", @post.retailer, class: "button-link", :target => "_blank" %></p>
+  <p><%= link_to "BUY NOW", @post.retailer, class: "button-link", :target => "_blank" %></p>
 
   <div class="post-content">
     <p><span>Brand:</span> <%= @post.brand_name %></p>

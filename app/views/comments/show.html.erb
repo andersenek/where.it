@@ -1,7 +1,7 @@
 <div class="custom-layout">
 <h2>Comment:</h2>
 
-<h3>"<%= @comment.subject %>" <%= link_to "(edit)", edit_post_comment_path %></h3>
+<h3>"<%= @comment.subject %>" <%= link_to image_tag("pencil.png", class: "icon-edit"), edit_post_comment_path %></h3>
 
 <h4>By: <%= @show_user %></h4>
 
