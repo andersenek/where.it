@@ -3,6 +3,7 @@ class PostsController < ApplicationController
     @posts = Post.all
 
     if params[:search]
+      # nice use of search method on the model!
       @posts = Post.search(params[:search]).order("created_at DESC")
     else
       @posts = Post.all.order('created_at DESC')

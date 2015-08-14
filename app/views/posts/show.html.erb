@@ -25,11 +25,15 @@
   <% @comments.each do |comment| %>
     <div class = "comment">
     <h5><%= link_to "\"#{comment.subject}\"", post_comment_path(@post, comment) %></h5>
+    <!-- re: my other statement about not saving user_email on the comment, use
+        comment.user.email, which is set through the user association on a
+        comment -->
     <p>Added: <%= comment.created_at.strftime("%b %d %y") %> by: <%= comment.user_email %></p>
     <p><%= comment.comment %></p>
     </div>
   <% end %>
 
   <h3>Leave a comment:</h3>
+    <!-- nice use of partials! -->
   <%= render partial: "comments/form" %>
 </div>

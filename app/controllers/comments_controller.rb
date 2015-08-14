@@ -4,6 +4,9 @@ class CommentsController < ApplicationController
   end
 
   def show
+    # instead of setting an @user, you can save a line (and variable) and just
+    # use current_user in the controller and views wherever you want the logged
+    # in user... this has the advantage of being more readable as well
     @user = current_user
     @comment = Comment.find(params[:id]) # Finding my comment id
     @show_user = @comment[:user_email]
@@ -35,6 +38,7 @@ class CommentsController < ApplicationController
     @user = current_user
     @comment = Comment.find(params[:id])
 
+    # nicely done!
     if @comment.user_id == current_user.id # A comment can only be edited by user who created the comment
       @comment.update(comment_params)
       redirect_to post_comment_path(@post, @comment)
