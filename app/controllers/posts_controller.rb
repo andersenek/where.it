@@ -3,6 +3,7 @@ class PostsController < ApplicationController
     @posts = Post.all
 
     if params[:search]
+      # nice use of search method on the model!
       @posts = Post.search(params[:search]).order("created_at DESC")
     else
       @posts = Post.all.order('created_at DESC')
@@ -17,8 +18,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id]) # Finding the post id
     @comments = @post.comments
     @comment = Comment.new # Finding my comment id
-    @is_favorite = Post.get_favorite(params[:id]) # calling class method get_favorite
-    # @is_favorite = @post.favorite_posts.where(post_id: params[:post_id])
   end
 
   def new

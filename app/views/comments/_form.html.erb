@@ -6,6 +6,11 @@
   <%= f.label :comment %>
   <%= f.text_field :comment %>
 
+  <!-- I'm not sure I understand why you're passing this information in through
+  form... your controller will be able to use current_user to associate the
+  comment with the logged in user, and from there, you can get the user's email.
+  that's much more secure than just hiding a form field, as any user could spoof
+  this value --> 
   <%= f.hidden_field :user_email, :value => current_user.email %>
 
   <%= f.submit "Submit" %>
