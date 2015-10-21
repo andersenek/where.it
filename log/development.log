@@ -36073,3 +36073,717 @@ Processing by PostsController#index as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1  [["user_id", 2]]
   Rendered posts/index.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 15:26:06 -0400
+
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+):
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `initialize'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `new'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `connect'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:242:in `initialize'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `postgresql_connection'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+  /Users/ericaandersen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+  /Users/ericaandersen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+  activerecord (4.2.3) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.3) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.3) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.3) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ericaandersen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/ericaandersen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/ericaandersen/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.8ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (58.0ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ericaandersen/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (130.5ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 15:26:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (4.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-10-21 15:26:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 224ms (Views: 199.7ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-10-21 15:26:19 -0400
+
+
+Started GET "/assets/welcome.self-67138ff0c970b86a267b17bc0c14c075770543360de5241ee7fde513f9f8a6ca.css?body=1" for ::1 at 2015-10-21 15:26:19 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-10-21 15:26:19 -0400
+
+
+Started GET "/assets/application.self-3aeeb295fbeecc43299ec8f85d9352cd4c57846000f52acdbc413444563b3ada.css?body=1" for ::1 at 2015-10-21 15:26:19 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-21 15:26:19 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-21 15:26:19 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-21 15:26:19 -0400
+
+
+Started POST "/users/sign_in" for ::1 at 2015-10-21 15:26:24 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VrrSoAQ96g3O3wLoACnfLvK/+2UZNYXGBZRU6YKYunhBgWVAwMvHXIv2f8motSxDV0MeBUQRgEbuA5nuUjQXwQ==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (6.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "andersenek@gmail.com"]]
+Completed 401 Unauthorized in 83ms (ActiveRecord: 6.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VrrSoAQ96g3O3wLoACnfLvK/+2UZNYXGBZRU6YKYunhBgWVAwMvHXIv2f8motSxDV0MeBUQRgEbuA5nuUjQXwQ==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 99ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-10-21 15:37:07 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fsC0v/i9HkiCYCBsc4iCNbnp0kal02hR5ucl4ZFPPwhp+wNfPEszGcdJXU3bFHFYHBU3Jvj3bdENcOjmQeOSsQ==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "andersenek@gmail.com"]]
+Completed 401 Unauthorized in 75ms (ActiveRecord: 2.9ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fsC0v/i9HkiCYCBsc4iCNbnp0kal02hR5ucl4ZFPPwhp+wNfPEszGcdJXU3bFHFYHBU3Jvj3bdENcOjmQeOSsQ==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 140ms (Views: 78.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-10-21 15:37:09 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KVh90+bFw76oFWrOUSI2hNA6M7RK9gC+KDqwI2Bckyg+Y8ozIjPu7+08F+/5vsXpdcbW1BfSBT7DrX0ksPA+kQ==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "andersenek@gmail.com"]]
+Completed 401 Unauthorized in 65ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KVh90+bFw76oFWrOUSI2hNA6M7RK9gC+KDqwI2Bckyg+Y8ozIjPu7+08F+/5vsXpdcbW1BfSBT7DrX0ksPA+kQ==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 101ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-10-21 15:37:17 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TQ7AlHGITm8Vw1hZtYtryCj9zBVeDokPWiJqoVLEfpVaNXd0tX5jPlDqJXgdF5iljQEpdQMqjI+xtaemgmjTLA==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "andersenek@gmail.com"]]
+Completed 401 Unauthorized in 66ms (ActiveRecord: 0.5ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TQ7AlHGITm8Vw1hZtYtryCj9zBVeDokPWiJqoVLEfpVaNXd0tX5jPlDqJXgdF5iljQEpdQMqjI+xtaemgmjTLA==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 98ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-10-21 15:37:21 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nqFasnAWoLXuaCmqDQFF7N18zkpwhaNS0+ASSN3X6XuJmu1StOCN5KtBVIulnbaBeIArKi2hptI4d99PDXtEwg==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "andersenek@gmail.com"]]
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.8ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-08-06 23:57:47.039111"], ["current_sign_in_at", "2015-10-21 19:37:21.128066"], ["sign_in_count", 22], ["updated_at", "2015-10-21 19:37:21.129761"], ["id", 1]]
+  [1m[36m (146.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 250ms (ActiveRecord: 152.1ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 15:37:21 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-10-21 15:37:24 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (3.2ms)[0m  SELECT "posts".* FROM "posts"  ORDER BY created_at DESC
+  Rendered posts/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 99ms (Views: 55.4ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/posts/5" for ::1 at 2015-10-21 15:37:25 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.8ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mFavoritePost Load (3.4ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[35mPost Exists (1.0ms)[0m  SELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1  [["user_id", 1], ["id", 5]]
+  [1m[36mComment Load (2.6ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  Rendered comments/_form.html.erb (4.6ms)
+  Rendered posts/show.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 105ms (Views: 74.5ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/assets/pencil-50dceb0631c2b233ef7ff7c551305f4f0ea35b3b0f9947f727e809a42891b32d.png" for ::1 at 2015-10-21 15:37:26 -0400
+
+
+Started GET "/assets/unfavorite-0186b49526d8a6c824af7477f38049f2d0ac058639cb4c5fd191a8131bca97c2.png" for ::1 at 2015-10-21 15:37:26 -0400
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-10-21 15:37:29 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-10-21 15:37:30 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mPost Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1[0m  [["user_id", 1], ["id", 6]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.4ms)
+  Rendered posts/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 44ms (Views: 39.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-10-21 15:37:59 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.6ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mPost Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1[0m  [["user_id", 1], ["id", 6]]
+  [1m[35mComment Load (0.5ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (29.5ms)
+  Rendered posts/show.html.erb within layouts/application (161.8ms)
+Completed 200 OK in 303ms (Views: 225.5ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/assets/application.self-3aeeb295fbeecc43299ec8f85d9352cd4c57846000f52acdbc413444563b3ada.css?body=1" for ::1 at 2015-10-21 15:37:59 -0400
+
+
+Started GET "/assets/welcome.self-67138ff0c970b86a267b17bc0c14c075770543360de5241ee7fde513f9f8a6ca.css?body=1" for ::1 at 2015-10-21 15:37:59 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-10-21 15:38:00 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-21 15:38:00 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-10-21 15:38:00 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-21 15:38:00 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-21 15:38:00 -0400
+
+
+Started GET "/assets/pencil-50dceb0631c2b233ef7ff7c551305f4f0ea35b3b0f9947f727e809a42891b32d.png" for ::1 at 2015-10-21 15:38:00 -0400
+
+
+Started GET "/assets/unfavorite-0186b49526d8a6c824af7477f38049f2d0ac058639cb4c5fd191a8131bca97c2.png" for ::1 at 2015-10-21 15:38:00 -0400
+
+
+Started PUT "/posts/6/favorite?type=unfavorite" for ::1 at 2015-10-21 15:38:03 -0400
+Processing by PostsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"bwtmIJRFswbfiHFWEUzEKH3S0VxXzYIYaWTAVTRJ/yMaI4gWOST40pVZtDwcEV9/29Y7/yo3U3a7PZub97pBaQ==", "type"=>"unfavorite", "id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "favorite_posts" WHERE "favorite_posts"."user_id" = $1 AND "favorite_posts"."post_id" = 6  [["user_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-10-21 15:38:03 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mPost Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1[0m  [["user_id", 1], ["id", 6]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 41ms (Views: 36.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/favorite-76ac2b60781274d785ef57945615a650f769a27e38bad661c9317ea9d94a0f27.png" for ::1 at 2015-10-21 15:38:03 -0400
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-10-21 15:38:08 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1  [["user_id", 1]]
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-10-21 15:38:10 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RGY1DilcMU8tXXE/CSYEcAuMuXXVsa8YjXElceLGxnIxTts4hD16m2eMtFUEe58nrYhT1qhLfnZfKH6/ITV4OA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 15:38:10 -0400
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-10-21 15:38:10 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-10-21 15:38:16 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-10-21 15:38:25 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pfqyhBa2LXEwZimWbe/OOIgBdKRb9Zua8etHRUV9VIR1XQjDBJ0S3sxoS7iJ90bFgJt3O9s4xilI5Qx7VhLjzA==", "user"=>{"email"=>"user@user.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'user@user.com' LIMIT 1[0m
+  [1m[35mSQL (4.1ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "user@user.com"], ["encrypted_password", "$2a$10$R17CEYeKN5fW8uIo/7Ub7ugG/SShWZokShuQ8DtGXpH9SvWqOqR9C"], ["created_at", "2015-10-21 19:38:25.731675"], ["updated_at", "2015-10-21 19:38:25.731675"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["last_sign_in_at", "2015-10-21 19:38:25.738365"], ["current_sign_in_at", "2015-10-21 19:38:25.738365"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2015-10-21 19:38:25.739141"], ["id", 3]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 92ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 15:38:25 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-10-21 15:38:27 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-10-21 15:38:29 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-10-21 15:38:30 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-10-21 15:38:31 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mPost Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1[0m  [["user_id", 3], ["id", 6]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (2.3ms)
+  Rendered posts/show.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 61ms (Views: 55.9ms | ActiveRecord: 1.6ms)
+
+
+Started PUT "/posts/6/favorite?type=favorite" for ::1 at 2015-10-21 15:38:33 -0400
+Processing by PostsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"NsB5vl78fbvrQZzZceKqWq4dtpJOAZPNdgS1Fo1fJ1jmZ8P5TNdCFBdP/veV+iKnpoe1Dc7Mzn7PCv4onjCQEA==", "type"=>"favorite", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "favorite_posts" ("user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 3], ["post_id", 6], ["created_at", "2015-10-21 19:38:33.252619"], ["updated_at", "2015-10-21 19:38:33.252619"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 13ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-10-21 15:38:33 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mPost Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1[0m  [["user_id", 3], ["id", 6]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.5ms)
+  Rendered posts/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 43ms (Views: 39.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-10-21 15:38:34 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1  [["user_id", 3]]
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-10-21 15:38:36 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"  ORDER BY created_at DESC
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/5" for ::1 at 2015-10-21 15:38:37 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mFavoritePost Load (0.3ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[35mPost Exists (0.5ms)[0m  SELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1  [["user_id", 3], ["id", 5]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 44ms (Views: 39.6ms | ActiveRecord: 1.6ms)
+
+
+Started PUT "/posts/5/favorite?type=favorite" for ::1 at 2015-10-21 15:38:38 -0400
+Processing by PostsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"BF51h55CA7BwcLvt5fG+sfwJWBT30D3qFDArM5RN/t7U+c/AjGk8H4x+2cMB6TZM9JNbi3cdYFmtPmANhyJJlg==", "type"=>"favorite", "id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "favorite_posts" ("user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["post_id", 5], ["created_at", "2015-10-21 19:38:38.901030"], ["updated_at", "2015-10-21 19:38:38.901030"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/5" for ::1 at 2015-10-21 15:38:38 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mFavoritePost Load (0.2ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[35mPost Exists (0.4ms)[0m  SELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1  [["user_id", 3], ["id", 5]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-10-21 15:38:40 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-10-21 15:38:42 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-10-21 15:38:42 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mFavoritePost Load (0.1ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 4]]
+  [1m[36mPost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1[0m  [["user_id", 3], ["id", 4]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 4]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/posts/4/favorite?type=favorite" for ::1 at 2015-10-21 15:38:44 -0400
+Processing by PostsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"oa5OEwMi+RtssnXZZkUgWkbZ0zkC9YfY9rplNXV+XZtxCfRUEQnGtJC8F/eCXainTkPQpoI42mtPtC4LZhHq0w==", "type"=>"favorite", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "favorite_posts" ("user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 3], ["post_id", 4], ["created_at", "2015-10-21 19:38:44.388981"], ["updated_at", "2015-10-21 19:38:44.388981"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 7ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-10-21 15:38:44 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mFavoritePost Load (0.1ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 4]]
+  [1m[36mPost Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1[0m  [["user_id", 3], ["id", 4]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 4]]
+  Rendered comments/_form.html.erb (1.3ms)
+  Rendered posts/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 42ms (Views: 38.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/4/edit" for ::1 at 2015-10-21 15:38:48 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered posts/_form.html.erb (4.1ms)
+  Rendered posts/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 40ms (Views: 37.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-10-21 15:39:05 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"  ORDER BY created_at DESC
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/3" for ::1 at 2015-10-21 15:39:09 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mFavoritePost Load (0.2ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[35mPost Exists (0.3ms)[0m  SELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1  [["user_id", 3], ["id", 3]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 44ms (Views: 40.2ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-10-21 15:39:13 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mLycp2EB4oUc1HkDoZGwFjIKZAxb94IzR+ajrjLaUJBIGybgcyrdKuDaGy1FiTjrOpBnk9s634D+6OiQIbXn2A=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 15:39:13 -0400
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-10-21 15:39:13 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-10-21 15:39:15 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aWR/QUHjaylAhZTadYgw0lXmo3ZqUXDvXFoZ6llEh7p0MfynjK/NI2QU/G1TJxLCXRPQiIbeOiOi3wAyvqgA8Q==", "user"=>{"email"=>"andersenek@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "andersenek@gmail.com"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["last_sign_in_at", "2015-10-21 19:37:21.128066"], ["current_sign_in_at", "2015-10-21 19:39:15.656889"], ["sign_in_count", 23], ["updated_at", "2015-10-21 19:39:15.657745"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 82ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 15:39:15 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 42ms (Views: 35.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-10-21 15:39:17 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 29.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-10-21 15:39:18 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts?request_type=all" for ::1 at 2015-10-21 15:39:20 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"all"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"  ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-10-21 15:39:26 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mFavoritePost Load (0.3ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 4]]
+  [1m[36mPost Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1[0m  [["user_id", 1], ["id", 4]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 4]]
+  Rendered comments/_form.html.erb (1.9ms)
+  Rendered posts/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 45ms (Views: 40.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/5" for ::1 at 2015-10-21 15:39:29 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mFavoritePost Load (0.2ms)[0m  [1mSELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1[0m  [["post_id", 5]]
+  [1m[35mPost Exists (0.3ms)[0m  SELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1  [["user_id", 1], ["id", 5]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-10-21 15:39:38 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-10-21 15:39:40 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.2ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mPost Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1[0m  [["user_id", 1], ["id", 6]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.0ms)
+  Rendered posts/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 53ms (Views: 48.5ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/posts/6/favorite?type=favorite" for ::1 at 2015-10-21 15:39:41 -0400
+Processing by PostsController#favorite as HTML
+  Parameters: {"authenticity_token"=>"IVYOry9EN/3frVR5uNzxEqaYFLkJ2AUzzAhIGj3hoFg9VnNlOX3pX7Y0EQZKIrRkAfzPKrT7iSCKnMVG1uEfdA==", "type"=>"favorite", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "favorite_posts" ("user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["post_id", 6], ["created_at", "2015-10-21 19:39:41.903697"], ["updated_at", "2015-10-21 19:39:41.903697"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/posts/6" for ::1 at 2015-10-21 15:39:41 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mFavoritePost Load (0.1ms)[0m  SELECT "favorite_posts".* FROM "favorite_posts" WHERE "favorite_posts"."post_id" = $1  [["post_id", 6]]
+  [1m[36mPost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT 1[0m  [["user_id", 1], ["id", 6]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1  [["post_id", 6]]
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts?request_type=favorites" for ::1 at 2015-10-21 15:39:43 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"request_type"=>"favorites"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" INNER JOIN "favorite_posts" ON "posts"."id" = "favorite_posts"."post_id" WHERE "favorite_posts"."user_id" = $1  [["user_id", 1]]
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-10-21 15:39:46 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.2ms)

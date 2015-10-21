@@ -5,11 +5,7 @@
 <div class="post-side">
 
   <h3><%= @post.title %> <%= link_to image_tag("pencil.png", class: "icon-edit"), edit_post_path %>
-  <% if @is_favorite %>
-    <%= link_to image_tag("unfavorite.png", class: "icon-edit"), favorite_post_path(@post, type: "unfavorite"), method: :put %>
-  <% else %>
-    <%= link_to image_tag("favorite.png", class: "icon-edit"), favorite_post_path(@post, type: "favorite"), method: :put %>
-  <% end %>
+  <%= display_star(@post) %>
   </h3>
 
   <p><%= link_to "BUY NOW", @post.retailer, class: "button-link", :target => "_blank" %></p>

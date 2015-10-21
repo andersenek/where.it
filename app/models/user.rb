@@ -8,4 +8,9 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :favorite_posts
   has_many :favorites, through: :favorite_posts, source: :post
+
+  def has_favorited?(post)
+    self.favorites.include?(post)
+  end
+
 end
